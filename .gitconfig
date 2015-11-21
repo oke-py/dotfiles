@@ -1,0 +1,26 @@
+[user]
+	name = Naoki Oketani
+	email = okepy.naoki@gmail.com
+[color]
+	ui = true
+[core]
+	editor = vim
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	di = diff
+	dc = diff --cached
+	dw = diff -C --color-words
+	br = branch
+	ls = ls-files
+	# http://qiita.com/peccul/items/90dd469e2f72babbc106
+	graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
+	# http://qiita.com/uasi/items/70d4358c3c70c64f4261
+	rebase-from-mb = !sh -c 'git rebase -i $(git merge-base ${1:-master} HEAD)' -
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+[ghq]
+	root = ~/src
